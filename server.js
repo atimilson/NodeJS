@@ -13,15 +13,8 @@ requireDir('./src/models');
 
 const Product = mongoose.model('Product');
 
-// primeira rota
-app.get('/',(req,res) => {
-   Product.create({
-      titulo : 'React Native', 
-      descricao : 'Aplicativos em react',
-      url : 'https://github.com/atimilson?tab=repositories',
-   });
+app.use('/api', require('./src/routes'));
 
-   res.send('ola planeta');
-})
+
 
 app.listen(3001);
